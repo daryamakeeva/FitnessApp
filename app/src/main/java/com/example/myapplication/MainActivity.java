@@ -56,5 +56,14 @@ public class MainActivity extends AppCompatActivity {
         btnexercise.startAnimation(btnthree);
         bgprogres.startAnimation(btntwo);
         bgprogresstop.startAnimation(ltr);
+
+        btnexercise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent a = new Intent(MainActivity.this, WorkoutAct.class);
+                a.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(a);
+            }
+        });
     }
 }
