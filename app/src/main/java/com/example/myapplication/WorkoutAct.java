@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -71,6 +72,15 @@ public class WorkoutAct extends AppCompatActivity {
         fitfourtitle.setTypeface(MLight);
         fitfourdesc.setTypeface(MMedium);
 
+
+        btnexercise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent a = new Intent(WorkoutAct.this,StartWorkoutAct.class);
+                a.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(a);
+            }
+        });
         //применяем анимацию
         titlepage.startAnimation(btnone);
         subtitlepage.startAnimation(btnone);

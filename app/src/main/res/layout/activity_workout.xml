@@ -102,7 +102,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="12dp"
-        android:text="НАЧАТЬ СЕЙЧАС"
+        android:text="НАЧАТЬ КОМПЛЕКС"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
