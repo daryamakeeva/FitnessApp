@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".MainWorkAct">
+
+    <TextView
+        android:id="@+id/titlepage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:lineSpacingExtra="8dp"
+        android:text="Типы тренировок"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/subtitlepage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="76dp"
+        android:lineSpacingExtra="8dp"
+        android:text="Выберите тип тренировки"
+        android:textColor="#4C5067"
+        android:textSize="20sp" />
+
+    <View
+        android:id="@+id/divpage"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_alignTop="@+id/subtitlepage"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="26dp"
+        android:background="#25293E" />
+
+    <TextView
+        android:id="@+id/startpage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/subtitlepage"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="49dp"
+        android:lineSpacingExtra="8dp"
+        android:text="Введение"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/starttext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/startpage"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:lineSpacingExtra="8dp"
+        android:text="Чтобы занятия спортом были эффективными, нужен комплексный подход. Лучший результат можно получить, сочетая разные виды фитнеса."
+        android:textColor="#4C5067"
+        android:textSize="17sp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_alignTop="@+id/starttext"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="130dp"
+        android:orientation="horizontal"
+        android:foreground="#80000000">
+
+
+
+        <ImageView
+            android:layout_width="188dp"
+            android:layout_height="210dp"
+            android:src="@drawable/cardiom"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"/>
+        <ImageView
+            android:layout_width="188dp"
+            android:layout_height="210dp"
+            android:src="@drawable/powerm"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_alignTop="@+id/starttext"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="340dp"
+        android:orientation="horizontal"
+        android:foreground="#80000000">
+
+
+        <ImageView
+            android:layout_width="188dp"
+            android:layout_height="210dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/stretchm" />
+        <ImageView
+            android:layout_width="188dp"
+            android:layout_height="210dp"
+            android:src="@drawable/yogam"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="370dp"
+        android:layout_marginBottom="-433dp"
+        android:layout_marginLeft="50dp"
+        android:text="Кардио"
+        android:textColor="#FFF"
+        android:textSize="30sp"
+        android:shadowColor="#99000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="370dp"
+        android:layout_marginBottom="-433dp"
+        android:layout_marginLeft="240dp"
+        android:text="Силовая"
+        android:textColor="#FFF"
+        android:textSize="30sp"
+        android:shadowColor="#99000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="580dp"
+        android:layout_marginBottom="-433dp"
+        android:layout_marginLeft="35dp"
+        android:text="Растяжка"
+        android:textColor="#FFF"
+        android:textSize="30sp"
+        android:shadowColor="#99000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="580dp"
+        android:layout_marginBottom="-433dp"
+        android:layout_marginLeft="260dp"
+        android:text="Йога"
+        android:textColor="#FFF"
+        android:textSize="30sp"
+        android:shadowColor="#99000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"/>
+
+</RelativeLayout>

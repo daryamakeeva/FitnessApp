@@ -37,6 +37,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread_inside" />
+    <Button
+        android:id="@+id/btnchange"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="@drawable/bgbtnadd"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="290dp"
+        android:text="Изменить"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/divpage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside"/>
 
     <View
         android:id="@+id/divpage"

@@ -9,6 +9,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ public class WorkoutAct extends AppCompatActivity {
             fitthreedesc, fitfourtitle, fitfourdesc;
 
     Animation btnone, btntwo, btnfour, btnfive, btnsix;
+    Button btnchange;
     View divpage;
     LinearLayout fitone, fittwo, fitthree, fitfour;
     @Override
@@ -52,6 +54,7 @@ public class WorkoutAct extends AppCompatActivity {
         fitfourtitle = (TextView) findViewById(R.id.fitfourtitle);
         fitfourdesc = (TextView) findViewById(R.id.fitfourdesc);
         divpage = (View) findViewById(R.id.divpage);
+        btnchange = (Button) findViewById(R.id.btnchange);
 
         fitone = (LinearLayout) findViewById(R.id.fitone);
         fittwo = (LinearLayout) findViewById(R.id.fittwo);
@@ -80,6 +83,15 @@ public class WorkoutAct extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent a = new Intent(WorkoutAct.this,StartWorkoutAct.class);
+                a.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(a);
+            }
+        });
+
+        btnchange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent a = new Intent(WorkoutAct.this,EditWorkAct.class);
                 a.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(a);
             }
