@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StartWorkoutAct"></activity>
+        <activity android:name=".EditWorkAct"></activity>
+        <activity android:name=".StartWorkoutAct" />
         <activity android:name=".WorkoutAct" />
         <activity android:name=".MainActivity">
             <intent-filter>

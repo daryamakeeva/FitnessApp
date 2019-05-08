@@ -7,6 +7,10 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +19,8 @@ import java.util.Locale;
 public class StartWorkoutAct extends AppCompatActivity {
     TextView startpage, subtitlepage, fitonetitle, fitonedesc, timerValue, btnexercise;
     View bgprogress;
+    ImageView img;
+    RotateAnimation rotate;
 
     private static final long START_TIME_IN_MILLIS = 4000;
     private CountDownTimer countDownTimer;
@@ -39,6 +45,7 @@ public class StartWorkoutAct extends AppCompatActivity {
         timerValue = (TextView) findViewById(R.id.timerValue);
         btnexercise = (TextView) findViewById(R.id.btnexercise);
 
+        img = (ImageView) findViewById(R.id.imgtimer);
         bgprogress = (View) findViewById(R.id.bgprogress);
 
         startpage.setTypeface(Vidaloka);
@@ -46,10 +53,15 @@ public class StartWorkoutAct extends AppCompatActivity {
         timerValue.setTypeface(MMedium);
         fitonetitle.setTypeface(MMedium);
 
+        rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+        rotate.setDuration(5000);
+        rotate.setInterpolator(new LinearInterpolator());
+
         btnexercise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startTimer();
+                img.startAnimation(rotate);
                 btnexercise.setText("СЛЕДУЮЩЕЕ УПРАЖНЕНИЕ");
                 bgprogress.setBackgroundColor(Color.parseColor("#25293E"));
             }

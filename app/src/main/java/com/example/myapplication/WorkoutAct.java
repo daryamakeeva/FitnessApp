@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -71,6 +73,7 @@ public class WorkoutAct extends AppCompatActivity {
         fitthreedesc.setTypeface(MMedium);
         fitfourtitle.setTypeface(MLight);
         fitfourdesc.setTypeface(MMedium);
+
 
 
         btnexercise.setOnClickListener(new View.OnClickListener() {
