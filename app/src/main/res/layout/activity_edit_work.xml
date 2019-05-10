@@ -15,7 +15,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
         android:lineSpacingExtra="8dp"
-        android:text="Типы тренировок"
+        android:text="Изменить"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
@@ -30,7 +30,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="76dp"
         android:lineSpacingExtra="8dp"
-        android:text="Выберите тип тренировки"
+        android:text="Выберете количество минут,\nвыделенных на каждое упражнения"
         android:textColor="#4C5067"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/divpage"
@@ -58,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="0dp"
-        android:background="#80DDD0"
+        android:background="#FEBFAB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +71,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="12dp"
-        android:text="НАЧАТЬ КОМПЛЕКС"
+        android:text="СОХРАНИТЬ ИЗМЕНЕНИЯ"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
@@ -91,9 +91,10 @@
         app:layout_constraintTop_toBottomOf="@+id/divpage">
 
         <ImageView
+            android:id="@+id/img1"
             android:layout_width="90dp"
             android:layout_height="70dp"
-            android:src="@drawable/cardio" />
+            android:src="@drawable/cardio1" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -108,18 +109,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Кардио"
-                android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/fitonedesc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="4 по 5 минут"
-                android:textColor="#4C5067"
-                android:textSize="16sp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -155,7 +147,6 @@
                 android:layout_height="30dp" />
         </LinearLayout>
     </LinearLayout>
-
     <LinearLayout
         android:id="@+id/fittwo"
         android:layout_width="match_parent"
@@ -168,13 +159,14 @@
         app:layout_constraintTop_toBottomOf="@+id/fitone">
 
         <ImageView
+            android:id="@+id/img2"
             android:layout_width="90dp"
             android:layout_height="70dp"
-            android:src="@drawable/power" />
+            android:src="@drawable/cardio2" />
 
         <LinearLayout
             android:id="@+id/linearLayout1"
-            android:layout_width="match_parent"
+            android:layout_width="145dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="12dp"
             android:layout_marginTop="8dp"
@@ -184,23 +176,248 @@
                 android:id="@+id/fittwotitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1"
-                android:textAlignment="center"
+                android:text="Силовая тренировка"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/fittwodesc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="5 по 10"
-                android:textColor="#4C5067"
-                android:textSize="16sp" />
+                android:textSize="18sp" />
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
 
-
+            <Button
+                android:id="@+id/btnremove2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/bgbtnremove"
+                android:text="-"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/workvalue2"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:text="0"
+                android:textColor="#FFF"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btnadd2"
+                android:textSize="18sp"
+                android:textColor="#FFF"
+                android:text="+"
+                android:background="@drawable/bgbtnadd"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+        </LinearLayout>
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/fitthree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fittwo">
+
+        <ImageView
+            android:id="@+id/img3"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:src="@drawable/cardio3" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="145dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fitthreetitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Растяжка"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnremove3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/bgbtnremove"
+                android:text="-"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/workvalue3"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:text="0"
+                android:textColor="#FFF"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btnadd3"
+                android:textSize="18sp"
+                android:textColor="#FFF"
+                android:text="+"
+                android:background="@drawable/bgbtnadd"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fitfour"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fitthree">
+
+        <ImageView
+            android:id="@+id/img4"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:src="@drawable/cardio4" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="145dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fitfourtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Йога"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnremove4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/bgbtnremove"
+                android:text="-"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/workvalue4"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:text="0"
+                android:textColor="#FFF"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btnadd4"
+                android:textSize="18sp"
+                android:textColor="#FFF"
+                android:text="+"
+                android:background="@drawable/bgbtnadd"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fitfive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fitfour">
+
+        <ImageView
+            android:id="@+id/img5"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:src="@drawable/cardio5" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="145dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fitfivetitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Растяжка"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnremove5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/bgbtnremove"
+                android:text="-"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/workvalue5"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:text="0"
+                android:textColor="#FFF"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/btnadd5"
+                android:textSize="18sp"
+                android:textColor="#FFF"
+                android:text="+"
+                android:background="@drawable/bgbtnadd"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+        </LinearLayout>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

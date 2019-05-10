@@ -15,7 +15,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
         android:lineSpacingExtra="8dp"
-        android:text="Типы тренировок"
+        android:text="Кардио"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="36sp"
@@ -30,9 +30,9 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="76dp"
         android:lineSpacingExtra="8dp"
-        android:text="Выберите тип тренировки"
+        android:text="Кардио - это лучший способ сбросить\nлишний вес, укрепить сердечно-\nсосудистую систему, повысить\nвыносливость и зарядиться энергией"
         android:textColor="#4C5067"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/divpage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -42,12 +42,11 @@
         android:layout_width="100dp"
         android:layout_height="30dp"
         android:background="@drawable/bgbtnadd"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="290dp"
         android:text="Изменить"
         android:textColor="#FFF"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/divpage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread_inside"/>
@@ -65,39 +64,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subtitlepage" />
 
-    <TextView
-        android:id="@+id/startpage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="8dp"
-        android:lineSpacingExtra="8dp"
-        android:text="Введение"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divpage" />
-
-    <TextView
-        android:id="@+id/starttext"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:lineSpacingExtra="8dp"
-        android:text="Чтобы занятия спортом были эффективными, нужен комплексный подход. Лучший результат можно получить, сочетая разные виды фитнеса."
-        android:textColor="#4C5067"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startpage"
-        app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <View
         android:id="@+id/bgprogress"
@@ -133,12 +99,13 @@
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/starttext">
+        app:layout_constraintTop_toBottomOf="@+id/divpage">
 
         <ImageView
+            android:id="@+id/img1"
             android:layout_width="90dp"
             android:layout_height="70dp"
-            android:src="@drawable/cardio" />
+            android:src="@drawable/cardio1" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -153,9 +120,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Кардио тренировка"
-                android:textAlignment="center"
+
                 android:textColor="#FFFFFF"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/fitonedesc"
@@ -180,9 +147,10 @@
         app:layout_constraintTop_toBottomOf="@+id/fitone">
 
         <ImageView
+            android:id="@+id/img2"
             android:layout_width="90dp"
             android:layout_height="70dp"
-            android:src="@drawable/power" />
+            android:src="@drawable/cardio2" />
 
         <LinearLayout
             android:id="@+id/linearLayout1"
@@ -197,9 +165,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Силовая тренировка"
-                android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/fittwodesc"
@@ -224,9 +191,10 @@
         app:layout_constraintTop_toBottomOf="@+id/fittwo">
 
         <ImageView
+            android:id="@+id/img3"
             android:layout_width="90dp"
             android:layout_height="70dp"
-            android:src="@drawable/stretch" />
+            android:src="@drawable/cardio3" />
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -241,9 +209,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Растяжка"
-                android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/fitthreedesc"
@@ -268,9 +235,10 @@
         app:layout_constraintTop_toBottomOf="@+id/fitthree">
 
         <ImageView
+            android:id="@+id/img4"
             android:layout_width="90dp"
             android:layout_height="70dp"
-            android:src="@drawable/yoga" />
+            android:src="@drawable/cardio4" />
 
         <LinearLayout
             android:id="@+id/linearLayout3"
@@ -285,9 +253,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Йога"
-                android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/fitfourdesc"
@@ -295,6 +262,50 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="8 по 3 минуты"
+                android:textColor="#4C5067"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fitfive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fitfour">
+
+        <ImageView
+            android:id="@+id/img5"
+            android:layout_width="90dp"
+            android:layout_height="70dp"
+            android:src="@drawable/cardio5" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fitfivetitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Растяжка"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/fitfivedesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="10 по 1 минуте"
                 android:textColor="#4C5067"
                 android:textSize="16sp" />
         </LinearLayout>

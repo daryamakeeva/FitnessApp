@@ -74,25 +74,27 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="210dp"
+        android:layout_height="180dp"
         android:layout_alignTop="@+id/starttext"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="115dp"
         android:orientation="horizontal"
         android:foreground="#80000000">
 
 
 
         <ImageView
+            android:id="@+id/cardio"
             android:layout_width="188dp"
-            android:layout_height="210dp"
+            android:layout_height="180dp"
             android:src="@drawable/cardiom"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"/>
         <ImageView
+            android:id="@+id/power"
             android:layout_width="188dp"
-            android:layout_height="210dp"
+            android:layout_height="180dp"
             android:src="@drawable/powerm"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"/>
@@ -101,24 +103,26 @@
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
-        android:layout_height="210dp"
+        android:layout_height="180dp"
         android:layout_alignTop="@+id/starttext"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="295dp"
         android:orientation="horizontal"
         android:foreground="#80000000">
 
 
         <ImageView
+            android:id="@+id/stretch"
             android:layout_width="188dp"
-            android:layout_height="210dp"
+            android:layout_height="180dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             android:src="@drawable/stretchm" />
         <ImageView
+            android:id="@+id/yoga"
             android:layout_width="188dp"
-            android:layout_height="210dp"
+            android:layout_height="180dp"
             android:src="@drawable/yogam"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"/>
@@ -127,7 +131,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="370dp"
+        android:layout_marginTop="350dp"
         android:layout_marginBottom="-433dp"
         android:layout_marginLeft="50dp"
         android:text="Кардио"
@@ -140,7 +144,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="370dp"
+        android:layout_marginTop="350dp"
         android:layout_marginBottom="-433dp"
         android:layout_marginLeft="240dp"
         android:text="Силовая"
@@ -153,9 +157,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="580dp"
+        android:layout_marginTop="530dp"
         android:layout_marginBottom="-433dp"
-        android:layout_marginLeft="35dp"
+        android:layout_marginLeft="40dp"
         android:text="Растяжка"
         android:textColor="#FFF"
         android:textSize="30sp"
@@ -166,7 +170,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="580dp"
+        android:layout_marginTop="530dp"
         android:layout_marginBottom="-433dp"
         android:layout_marginLeft="260dp"
         android:text="Йога"

@@ -118,7 +118,7 @@
         <ImageView
             android:layout_width="90dp"
             android:layout_height="70dp"
-            android:src="@drawable/cardio" />
+            android:src="@drawable/cardio1" />
 
         <LinearLayout
             android:id="@+id/linearLayout"

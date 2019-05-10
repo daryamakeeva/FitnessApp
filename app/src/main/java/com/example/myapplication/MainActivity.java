@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         btnexercise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent a = new Intent(MainActivity.this, WorkoutAct.class);
+                Intent a = new Intent(MainActivity.this, MainWorkAct.class);
                 a.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(a);
             }
