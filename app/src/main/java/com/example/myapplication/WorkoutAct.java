@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -26,8 +28,14 @@ public class WorkoutAct extends AppCompatActivity {
     View divpage;
     LinearLayout fitone, fittwo, fitthree, fitfour;
     SharedPreferences sPref;
-    ImageView img1, img2, img3, img4, img5;
+
     String type;
+
+    int[] img = new int[]{R.id.img1, R.id.img2, R.id.img3, R.id.img4, R.id.img5 };
+    int[] title = new int[]{R.id.fitonetitle, R.id.fittwotitle, R.id.fitthreetitle,
+            R.id.fitfourtitle, R.id.fitfivetitle};
+    int[] desc = new int[]{R.id.fitonedesc, R.id.fittwodesc, R.id.fitthreedesc,
+            R.id.fitfourdesc, R.id.fitfivedesc};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,16 +60,7 @@ public class WorkoutAct extends AppCompatActivity {
         subtitlepage =(TextView) findViewById(R.id.subtitlepage);
 
         btnexercise = (TextView) findViewById(R.id.btnexercise);
-        fitonetitle = (TextView) findViewById(R.id.fitonetitle);
-        fitonedesc = (TextView) findViewById(R.id.fitonedesc);
-        fittwotitle = (TextView) findViewById(R.id.fittwotitle);
-        fittwodesc = (TextView) findViewById(R.id.fittwodesc);
-        fitthreetitle = (TextView) findViewById(R.id.fitthreetitle);
-        fitthreedesc = (TextView) findViewById(R.id.fitthreedesc);
-        fitfourtitle = (TextView) findViewById(R.id.fitfourtitle);
-        fitfourdesc = (TextView) findViewById(R.id.fitfourdesc);
-        fitfivetitle = (TextView) findViewById(R.id.fitfivetitle);
-        fitfivedesc = (TextView) findViewById(R.id.fitfivedesc);
+
         divpage = (View) findViewById(R.id.divpage);
         btnchange = (Button) findViewById(R.id.btnchange);
 
@@ -69,72 +68,67 @@ public class WorkoutAct extends AppCompatActivity {
         fittwo = (LinearLayout) findViewById(R.id.fittwo);
         fitthree = (LinearLayout) findViewById(R.id.fitthree);
         fitfour = (LinearLayout) findViewById(R.id.fitfour);
+/*
+        SQLiteDatabase db = getBaseContext().openOrCreateDatabase("app.db", MODE_PRIVATE, null);
+        String sqlSelect = "SELECT * FROM " + type + ";";
+        Cursor query = db.rawQuery(sqlSelect, null);
+        int i = 0;
+        if (query.moveToFirst()){
+            do {
+                TextView myView = (TextView) findViewById(title[i]);
+                TextView myDesc = (TextView) findViewById(desc[i]);
+                ImageView myImg = (ImageView) findViewById(img[i]);
 
-        img1 = (ImageView) findViewById(R.id.img1);
-        img2 = (ImageView) findViewById(R.id.img2);
-        img3 = (ImageView) findViewById(R.id.img3);
-        img4 = (ImageView) findViewById(R.id.img4);
-        img5 = (ImageView) findViewById(R.id.img5);
+                String name = query.getString(1);
+                String img = query.getString(4);
+                String desc = Integer.toString(query.getInt(3));
 
-        String imgname1 = type + "1";
-        String imgname2 = type + "2";
-        String imgname3 = type + "3";
-        String imgname4 = type + "4";
-        String imgname5 = type + "5";
-        int resID = getResources().getIdentifier(imgname1, "drawable", getPackageName());
-        img1.setImageResource(resID);
-        resID = getResources().getIdentifier(imgname2, "drawable", getPackageName());
-        img2.setImageResource(resID);
-        resID = getResources().getIdentifier(imgname3, "drawable", getPackageName());
-        img3.setImageResource(resID);
-        resID = getResources().getIdentifier(imgname4, "drawable", getPackageName());
-        img4.setImageResource(resID);
-        resID = getResources().getIdentifier(imgname5, "drawable", getPackageName());
-        img5.setImageResource(resID);
+                int resID = getResources().getIdentifier(img, "drawable", getPackageName());
 
-        sPref = getPreferences(MODE_PRIVATE);
-        String title1 = sPref.getString(imgname1, "");
-        fitonetitle.setText(title1);
-        String title2 = sPref.getString(imgname2, "");
-        fittwotitle.setText(title2);
-        String title3 = sPref.getString(imgname3, "");
-        fitthreetitle.setText(title3);
-        String title4 = sPref.getString(imgname4, "");
-        fitfourtitle.setText(title4);
-        String title5 = sPref.getString(imgname5, "");
-        fitfivetitle.setText(title5);
+                myView.setText(name);
+                myImg.setImageResource(resID);
+                myDesc.setText(desc);
 
+                myView.setTypeface(MLight);
+                myDesc.setTypeface(MMedium);
+                i++;
+            }
+            while (query.moveToNext());
+        }
+        db.close();
+*/
+        DataBase dbHelp = new DataBase(this);
+        SQLiteDatabase db = dbHelp.getWritableDatabase();
 
-        sPref = getSharedPreferences("EditWorkAct",MODE_PRIVATE);
-        String desc1 = sPref.getString(imgname1 + "ment", "");
-        fitonedesc.setText(desc1);
-        String desc2 = sPref.getString(imgname2 + "ment", "");
-        fittwodesc.setText(desc2);
-        String desc3 = sPref.getString(imgname3 + "ment", "");
-        fitthreedesc.setText(desc3);
-        String desc4 = sPref.getString(imgname4 + "ment", "");
-        fitfourdesc.setText(desc4);
-        String desc5 = sPref.getString(imgname5 + "ment", "");
-        fitfivedesc.setText(desc5);
+        Cursor query = db.query("train", null, null, null, null, null, null);
+        int i = 0;
+        if (query.moveToFirst()){
+            do {
+                TextView myView = (TextView) findViewById(title[i]);
+                TextView myDesc = (TextView) findViewById(desc[i]);
+                ImageView myImg = (ImageView) findViewById(img[i]);
 
+                String name = query.getString(query.getColumnIndex("name"));
+                String img = query.getString(query.getColumnIndex("img"));
+                String desc = Integer.toString(query.getInt(query.getColumnIndex("time")));
+
+                int resID = getResources().getIdentifier(img, "drawable", getPackageName());
+
+                myView.setText(name);
+                myImg.setImageResource(resID);
+                myDesc.setText(desc);
+
+                myView.setTypeface(MLight);
+                myDesc.setTypeface(MMedium);
+                i++;
+            }
+            while (query.moveToNext());
+        }
             //Применяем шрифт
         titlepage.setTypeface(Vidaloka);
         subtitlepage.setTypeface(MLight);
 
         btnexercise.setTypeface(MMedium);
-
-        fitonetitle.setTypeface(MLight);
-        fitonedesc.setTypeface(MMedium);
-        fittwotitle.setTypeface(MLight);
-        fittwodesc.setTypeface(MMedium);
-        fitthreetitle.setTypeface(MLight);
-        fitthreedesc.setTypeface(MMedium);
-        fitfourtitle.setTypeface(MLight);
-        fitfourdesc.setTypeface(MMedium);
-
-        fitfivetitle.setTypeface(MLight);
-        fitfivedesc.setTypeface(MMedium);
-
 
 
         btnexercise.setOnClickListener(new View.OnClickListener() {

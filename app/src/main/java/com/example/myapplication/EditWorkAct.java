@@ -270,7 +270,9 @@ public class EditWorkAct extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sPref = getPreferences(MODE_PRIVATE);
+
                 SharedPreferences.Editor ed = sPref.edit();
+
                 ed.putString(imgname1 + "ment", workvalue.getText().toString());
                 ed.putString(imgname2 + "ment", workvalue2.getText().toString());
                 ed.putString(imgname3 + "ment", workvalue3.getText().toString());

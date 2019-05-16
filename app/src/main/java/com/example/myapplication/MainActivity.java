@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,7 +23,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        DataBase dbHelp = new DataBase(this);
+        SQLiteDatabase db = dbHelp.getWritableDatabase();
+        dbHelp.close();
+        db.close();
         //Загружаем анимацию
         animimgpage = AnimationUtils.loadAnimation(this, R.anim.animimgpage);
         btnone = AnimationUtils.loadAnimation(this, R.anim.btnone);

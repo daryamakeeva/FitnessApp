@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string-array name="name">
+        <item>Бег с подниманием колена</item>
+        <item>Конькобежец</item>
+        <item>Выпады со сменой ног</item>
+        <item>Присед с выпрыгиванием</item>
+        <item>Берпи</item>
+    </string-array>
+    <string-array name="img">
+        <item>cardio1</item>
+        <item>cardio2</item>
+        <item>cardio3</item>
+        <item>cardio4</item>
+        <item>cardio5</item>
+    </string-array>
 </resources>
