@@ -34,10 +34,9 @@
 
     <TextView
         android:id="@+id/subtitlepage"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginLeft="0dp"
         android:layout_marginTop="496dp"
         android:lineSpacingExtra="8dp"
         android:text="Начните тренировку, чтобы \n получить максимальный результат!"

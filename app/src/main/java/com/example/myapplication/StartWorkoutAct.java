@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.CountDownTimer;
@@ -15,11 +17,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 public class StartWorkoutAct extends AppCompatActivity {
-    TextView startpage, subtitlepage, fitonetitle, fitonedesc, timerValue, btnexercise;
+    TextView startpage, subtitlepage, fitonetitle, fitonedesc, timerValue, btnexercise, starttext;
     View bgprogress;
-    ImageView img;
+    ImageView img, img1;
     RotateAnimation rotate;
 
     private static final long START_TIME_IN_MILLIS = 4000;
@@ -27,17 +30,24 @@ public class StartWorkoutAct extends AppCompatActivity {
     private boolean mTimerRunning;
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
 
+    String type;
+    int id, cnt, minute;
+    boolean flag = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_workout);
 
+        type = getIntent().getStringExtra("type");
+        id = getIntent().getIntExtra("id", 0);
+        cnt = getIntent().getIntExtra("cnt", 0);
         // Импортируем шрифты
         Typeface MLight = Typeface.createFromAsset(getAssets(), "fonts/MLight.ttf");
         Typeface MMedium = Typeface.createFromAsset(getAssets(), "fonts/MMedium.ttf");
         Typeface Vidaloka = Typeface.createFromAsset(getAssets(), "fonts/Vidaloka.ttf");
 
         startpage = (TextView) findViewById(R.id.startpage);
+        starttext = (TextView) findViewById(R.id.starttext);
         subtitlepage = (TextView) findViewById(R.id.subtitlepage);
         btnexercise = (TextView) findViewById(R.id.btnexercise);
         fitonetitle = (TextView) findViewById(R.id.fitonetitle);
@@ -52,18 +62,85 @@ public class StartWorkoutAct extends AppCompatActivity {
         btnexercise.setTypeface(MMedium);
         timerValue.setTypeface(MMedium);
         fitonetitle.setTypeface(MMedium);
+        DataBase dbHelp = new DataBase(this);
+        SQLiteDatabase db = dbHelp.getWritableDatabase();
+        String where = "type" + " LIKE '%" + type + "%'";
+        String[] whereArgs = new String[]{where};
+
+        String sqlSelect = "SELECT * FROM train WHERE id=" + id + ";";
+        Cursor query = db.rawQuery(sqlSelect, null);
+        int i = 0;
+        if (query.moveToFirst()){
+            do {
+                String name = query.getString(query.getColumnIndex("name"));
+                String img_n = query.getString(query.getColumnIndex("img"));
+                int time = query.getInt(query.getColumnIndex("time"));
+
+                utilFunc func = new utilFunc();
+                String desc = func.choosePluralMerge(time, "минута", "минуты", "минут");
+                String description = query.getString(query.getColumnIndex("description"));
+
+                ImageView myImg = (ImageView) findViewById(R.id.img);
+
+                int resID = getResources().getIdentifier(img_n, "drawable", getPackageName());
+
+                minute = time;
+
+                fitonetitle.setText(name);
+                myImg.setImageResource(resID);
+                fitonedesc.setText(desc);
+                starttext.setText(description);
+
+                fitonetitle.setTypeface(MLight);
+                fitonedesc.setTypeface(MMedium);
+                i++;
+            }
+            while (query.moveToNext());
+        }
+        db.close();
+
+        //fitonetitle.setText(Integer.toString(id));
 
         rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f,Animation.RELATIVE_TO_SELF,0.5f);
         rotate.setDuration(5000);
+        rotate.setRepeatCount((int)(TimeUnit.MINUTES.toMillis(minute)/5000));
         rotate.setInterpolator(new LinearInterpolator());
 
         btnexercise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startTimer();
-                img.startAnimation(rotate);
-                btnexercise.setText("СЛЕДУЮЩЕЕ УПРАЖНЕНИЕ");
-                bgprogress.setBackgroundColor(Color.parseColor("#25293E"));
+                if (!flag)
+                {
+                    startTimer();
+                    img.startAnimation(rotate);
+                    btnexercise.setText("СЛЕДУЮЩЕЕ УПРАЖНЕНИЕ");
+                    bgprogress.setBackgroundColor(Color.parseColor("#25293E"));
+                    flag = true;
+                } else
+                {
+                    id++;
+                    cnt++;
+                    if (cnt == 5)
+                    {
+                        Intent a = new Intent(StartWorkoutAct.this, MainWorkAct.class);
+                        a.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        countDownTimer.cancel();
+                        startActivity(a);
+                    }
+                    else
+                    {
+                        Intent a = new Intent(StartWorkoutAct.this,StartWorkoutAct.class);
+                        a.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        a.putExtra("type", type);
+                        a.putExtra("cnt", cnt);
+                        a.putExtra("id", id);
+                        countDownTimer.cancel();
+                        finish();
+                        startActivity(a);
+                    }
+
+                }
+
             }
         });
     }
@@ -80,7 +157,7 @@ public class StartWorkoutAct extends AppCompatActivity {
                 String timeLeft = String.format(Locale.getDefault(), "%02d:%02d", 0, 0);
                 timerValue.setText(timeLeft);
                 Toast.makeText(getApplicationContext(), "СТАРТ", Toast.LENGTH_SHORT).show();
-                mTimeLeftInMillis = 301000;
+                mTimeLeftInMillis = TimeUnit.MINUTES.toMillis(minute) + 1000;
                 continueTimer();
             }
         }.start();

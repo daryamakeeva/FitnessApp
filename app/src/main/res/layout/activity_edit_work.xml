@@ -82,7 +82,7 @@
     <LinearLayout
         android:id="@+id/fitone"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
@@ -98,7 +98,7 @@
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="145dp"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="12dp"
             android:layout_marginTop="8dp"
@@ -113,6 +113,7 @@
                 android:textSize="18sp" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -122,35 +123,38 @@
 
             <Button
                 android:id="@+id/btnremove"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/bgbtnremove"
                 android:text="-"
                 android:textColor="#FFF"
                 android:textSize="18sp" />
+
             <TextView
                 android:id="@+id/workvalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:text="0"
                 android:textColor="#FFF"
-                android:textSize="20sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:textSize="20sp" />
+
             <Button
                 android:id="@+id/btnadd"
-                android:textSize="18sp"
-                android:textColor="#FFF"
-                android:text="+"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/bgbtnadd"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
+                android:text="+"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/fittwo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"
@@ -166,7 +170,7 @@
 
         <LinearLayout
             android:id="@+id/linearLayout1"
-            android:layout_width="145dp"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="12dp"
             android:layout_marginTop="8dp"
@@ -181,6 +185,7 @@
                 android:textSize="18sp" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -190,36 +195,38 @@
 
             <Button
                 android:id="@+id/btnremove2"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/bgbtnremove"
                 android:text="-"
                 android:textColor="#FFF"
                 android:textSize="18sp" />
+
             <TextView
                 android:id="@+id/workvalue2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:text="0"
                 android:textColor="#FFF"
-                android:textSize="20sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:textSize="20sp" />
+
             <Button
                 android:id="@+id/btnadd2"
-                android:textSize="18sp"
-                android:textColor="#FFF"
-                android:text="+"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/bgbtnadd"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
+                android:text="+"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/fitthree"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"
@@ -235,7 +242,7 @@
 
         <LinearLayout
             android:id="@+id/linearLayout2"
-            android:layout_width="145dp"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="12dp"
             android:layout_marginTop="8dp"
@@ -249,6 +256,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -258,36 +266,38 @@
 
             <Button
                 android:id="@+id/btnremove3"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/bgbtnremove"
                 android:text="-"
                 android:textColor="#FFF"
                 android:textSize="18sp" />
+
             <TextView
                 android:id="@+id/workvalue3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:text="0"
                 android:textColor="#FFF"
-                android:textSize="20sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:textSize="20sp" />
+
             <Button
                 android:id="@+id/btnadd3"
-                android:textSize="18sp"
-                android:textColor="#FFF"
-                android:text="+"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/bgbtnadd"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
+                android:text="+"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/fitfour"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"
@@ -303,7 +313,7 @@
 
         <LinearLayout
             android:id="@+id/linearLayout3"
-            android:layout_width="145dp"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="12dp"
             android:layout_marginTop="8dp"
@@ -318,6 +328,7 @@
                 android:textSize="18sp" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -327,36 +338,38 @@
 
             <Button
                 android:id="@+id/btnremove4"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/bgbtnremove"
                 android:text="-"
                 android:textColor="#FFF"
                 android:textSize="18sp" />
+
             <TextView
                 android:id="@+id/workvalue4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:text="0"
                 android:textColor="#FFF"
-                android:textSize="20sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:textSize="20sp" />
+
             <Button
                 android:id="@+id/btnadd4"
-                android:textSize="18sp"
-                android:textColor="#FFF"
-                android:text="+"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/bgbtnadd"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
+                android:text="+"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/fitfive"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"
@@ -372,7 +385,7 @@
 
         <LinearLayout
             android:id="@+id/linearLayout5"
-            android:layout_width="145dp"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="12dp"
             android:layout_marginTop="8dp"
@@ -386,6 +399,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -395,29 +409,31 @@
 
             <Button
                 android:id="@+id/btnremove5"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/bgbtnremove"
                 android:text="-"
                 android:textColor="#FFF"
                 android:textSize="18sp" />
+
             <TextView
                 android:id="@+id/workvalue5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:text="0"
                 android:textColor="#FFF"
-                android:textSize="20sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:textSize="20sp" />
+
             <Button
                 android:id="@+id/btnadd5"
-                android:textSize="18sp"
-                android:textColor="#FFF"
-                android:text="+"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@drawable/bgbtnadd"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
+                android:text="+"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

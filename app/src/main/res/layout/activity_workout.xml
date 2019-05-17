@@ -24,7 +24,7 @@
 
     <TextView
         android:id="@+id/subtitlepage"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
@@ -37,19 +37,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread_inside" />
+
     <Button
         android:id="@+id/btnchange"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/bgbtnadd"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="290dp"
         android:text="Изменить"
         android:textColor="#FFF"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="spread_inside"/>
+        app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <View
         android:id="@+id/divpage"
@@ -93,7 +95,7 @@
     <LinearLayout
         android:id="@+id/fitone"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="16dp"
@@ -138,7 +140,7 @@
     <LinearLayout
         android:id="@+id/fittwo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"
@@ -182,7 +184,7 @@
     <LinearLayout
         android:id="@+id/fitthree"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"
@@ -226,7 +228,7 @@
     <LinearLayout
         android:id="@+id/fitfour"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"
@@ -270,7 +272,7 @@
     <LinearLayout
         android:id="@+id/fitfive"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"

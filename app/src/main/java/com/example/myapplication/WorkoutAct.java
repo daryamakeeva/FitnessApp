@@ -5,14 +5,11 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -28,8 +25,8 @@ public class WorkoutAct extends AppCompatActivity {
     View divpage;
     LinearLayout fitone, fittwo, fitthree, fitfour;
     SharedPreferences sPref;
-
     String type;
+    int id;
 
     int[] img = new int[]{R.id.img1, R.id.img2, R.id.img3, R.id.img4, R.id.img5 };
     int[] title = new int[]{R.id.fitonetitle, R.id.fittwotitle, R.id.fitthreetitle,
@@ -42,6 +39,7 @@ public class WorkoutAct extends AppCompatActivity {
         setContentView(R.layout.activity_workout);
 
         type = getIntent().getStringExtra("type");
+        id = getIntent().getIntExtra("id", 0);
 
         //Загружаем анимацию
         btnone = AnimationUtils.loadAnimation(this, R.anim.btnone);
@@ -68,39 +66,14 @@ public class WorkoutAct extends AppCompatActivity {
         fittwo = (LinearLayout) findViewById(R.id.fittwo);
         fitthree = (LinearLayout) findViewById(R.id.fitthree);
         fitfour = (LinearLayout) findViewById(R.id.fitfour);
-/*
-        SQLiteDatabase db = getBaseContext().openOrCreateDatabase("app.db", MODE_PRIVATE, null);
-        String sqlSelect = "SELECT * FROM " + type + ";";
-        Cursor query = db.rawQuery(sqlSelect, null);
-        int i = 0;
-        if (query.moveToFirst()){
-            do {
-                TextView myView = (TextView) findViewById(title[i]);
-                TextView myDesc = (TextView) findViewById(desc[i]);
-                ImageView myImg = (ImageView) findViewById(img[i]);
 
-                String name = query.getString(1);
-                String img = query.getString(4);
-                String desc = Integer.toString(query.getInt(3));
-
-                int resID = getResources().getIdentifier(img, "drawable", getPackageName());
-
-                myView.setText(name);
-                myImg.setImageResource(resID);
-                myDesc.setText(desc);
-
-                myView.setTypeface(MLight);
-                myDesc.setTypeface(MMedium);
-                i++;
-            }
-            while (query.moveToNext());
-        }
-        db.close();
-*/
         DataBase dbHelp = new DataBase(this);
         SQLiteDatabase db = dbHelp.getWritableDatabase();
+        String where = "type" + " LIKE '%" + type + "%'";
+        String[] whereArgs = new String[]{where};
 
-        Cursor query = db.query("train", null, null, null, null, null, null);
+        String sqlSelect = "SELECT * FROM train WHERE type='" + type + "';";
+        Cursor query = db.rawQuery(sqlSelect, null);
         int i = 0;
         if (query.moveToFirst()){
             do {
@@ -110,7 +83,11 @@ public class WorkoutAct extends AppCompatActivity {
 
                 String name = query.getString(query.getColumnIndex("name"));
                 String img = query.getString(query.getColumnIndex("img"));
-                String desc = Integer.toString(query.getInt(query.getColumnIndex("time")));
+                int time = query.getInt(query.getColumnIndex("time"));
+
+                utilFunc func = new utilFunc();
+                String desc = func.choosePluralMerge(time, "минута", "минуты", "минут");
+
 
                 int resID = getResources().getIdentifier(img, "drawable", getPackageName());
 
@@ -124,6 +101,25 @@ public class WorkoutAct extends AppCompatActivity {
             }
             while (query.moveToNext());
         }
+        sqlSelect = "SELECT * FROM types WHERE type='" + type + "';";
+        query = db.rawQuery(sqlSelect, null);
+
+        i = 0;
+        if (query.moveToFirst()){
+            do {
+                String type_name = query.getString(query.getColumnIndex("name"));
+                String desc = query.getString(query.getColumnIndex("description"));
+                titlepage.setText(type_name);
+                subtitlepage.setText(desc);
+                i++;
+            }
+            while (query.moveToNext());
+        }
+
+
+
+        db.close();
+
             //Применяем шрифт
         titlepage.setTypeface(Vidaloka);
         subtitlepage.setTypeface(MLight);
@@ -136,6 +132,9 @@ public class WorkoutAct extends AppCompatActivity {
             public void onClick(View v) {
                 Intent a = new Intent(WorkoutAct.this,StartWorkoutAct.class);
                 a.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                a.putExtra("type", type);
+                a.putExtra("cnt", 0);
+                a.putExtra("id", id);
                 startActivity(a);
             }
         });
