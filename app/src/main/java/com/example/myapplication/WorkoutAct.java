@@ -20,11 +20,10 @@ public class WorkoutAct extends AppCompatActivity {
             fitonetitle, fitonedesc, fittwotitle, fittwodesc, fitthreetitle,
             fitthreedesc, fitfourtitle, fitfourdesc, fitfivetitle, fitfivedesc;
 
-    Animation btnone, btntwo, btnfour, btnfive, btnsix;
+    Animation bttone, bttwo, bttfour, bttfive, bttsix, bttseven;
     Button btnchange;
-    View divpage;
-    LinearLayout fitone, fittwo, fitthree, fitfour;
-    SharedPreferences sPref;
+    View divpage, bgprogress;
+    LinearLayout fitone, fittwo, fitthree, fitfour, fitfive;
     String type;
     int id;
 
@@ -42,11 +41,13 @@ public class WorkoutAct extends AppCompatActivity {
         id = getIntent().getIntExtra("id", 0);
 
         //Загружаем анимацию
-        btnone = AnimationUtils.loadAnimation(this, R.anim.btnone);
-        btntwo = AnimationUtils.loadAnimation(this, R.anim.btntwo);
-        btnfour = AnimationUtils.loadAnimation(this, R.anim.btnfour);
-        btnfive = AnimationUtils.loadAnimation(this, R.anim.btnfive);
-        btnsix = AnimationUtils.loadAnimation(this, R.anim.btnsix);
+        bttone = AnimationUtils.loadAnimation(this, R.anim.btnone);
+        bttwo = AnimationUtils.loadAnimation(this, R.anim.btntwo);
+        bttfour = AnimationUtils.loadAnimation(this, R.anim.btnfour);
+        bttfive = AnimationUtils.loadAnimation(this, R.anim.btnfive);
+        bttsix = AnimationUtils.loadAnimation(this, R.anim.btnsix);
+        bttseven = AnimationUtils.loadAnimation(this, R.anim.btnseven);
+
 
         //Импортируем шрифты
         Typeface MLight = Typeface.createFromAsset(getAssets(), "fonts/MLight.ttf");
@@ -58,6 +59,7 @@ public class WorkoutAct extends AppCompatActivity {
         subtitlepage =(TextView) findViewById(R.id.subtitlepage);
 
         btnexercise = (TextView) findViewById(R.id.btnexercise);
+        bgprogress = (View) findViewById(R.id.bgprogress);
 
         divpage = (View) findViewById(R.id.divpage);
         btnchange = (Button) findViewById(R.id.btnchange);
@@ -66,6 +68,7 @@ public class WorkoutAct extends AppCompatActivity {
         fittwo = (LinearLayout) findViewById(R.id.fittwo);
         fitthree = (LinearLayout) findViewById(R.id.fitthree);
         fitfour = (LinearLayout) findViewById(R.id.fitfour);
+        fitfive = (LinearLayout) findViewById(R.id.fitfive);
 
         DataBase dbHelp = new DataBase(this);
         SQLiteDatabase db = dbHelp.getWritableDatabase();
@@ -158,5 +161,19 @@ public class WorkoutAct extends AppCompatActivity {
         fittwo.startAnimation(btnfour);
         fitthree.startAnimation(btnfive);
         fitfour.startAnimation(btnsix);
-    */}
+    */
+        titlepage.startAnimation(bttone);
+        btnchange.startAnimation(bttone);
+        subtitlepage.startAnimation(bttone);
+        divpage.startAnimation(bttone);
+
+        fitone.startAnimation(bttwo);
+        fittwo.startAnimation(bttfour);
+        fitthree.startAnimation(bttfive);
+        fitfour.startAnimation(bttsix);
+        fitfive.startAnimation(bttseven);
+
+        btnexercise.startAnimation(bttfive);
+        bgprogress.startAnimation(bttfive);
+    }
 }

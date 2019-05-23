@@ -129,6 +129,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/cardiotxt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="375dp"
@@ -142,6 +143,7 @@
         android:shadowDy="1"
         android:shadowRadius="3"/>
     <TextView
+        android:id="@+id/powertxt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="375dp"
@@ -156,6 +158,7 @@
         android:shadowRadius="3"/>
 
     <TextView
+        android:id="@+id/stretchtxt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="40dp"
@@ -169,6 +172,7 @@
         android:textColor="#FFF"
         android:textSize="30sp" />
     <TextView
+        android:id="@+id/yogatxt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="585dp"
